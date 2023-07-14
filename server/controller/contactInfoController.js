@@ -1,4 +1,5 @@
 import contactInfoModel from "../models/contactInfoModel.js";
+import { sendEmail } from './emailController.js';
 
 export const sendInfo = async (req, res) => {
   const {
@@ -21,6 +22,7 @@ export const sendInfo = async (req, res) => {
 
   try {
     await info.save();
+    sendEmail(Email,Message);
     res.status(200).json("Created successfully");
   } catch (error) {
     res.status(500).json({ message: error.message });

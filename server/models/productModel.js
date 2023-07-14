@@ -9,7 +9,7 @@ const productSchema = mongoose.Schema({
   price: {
     type: Number,
     required: [true, "Please add a price"],
-  },
+  },  
 
   category: {
     type: String,
@@ -39,3 +39,4 @@ const productSchema = mongoose.Schema({
 
 const productModel = mongoose.model("Product", productSchema);
 export default productModel;
+
